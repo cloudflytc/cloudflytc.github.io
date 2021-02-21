@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>利用vercel(前now.sh)搭建Onepoint | 随笔</title>
+<meta name="description" content="just writing">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cloudflytc.github.io/favicon.ico?v=1613926879797">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cloudflytc.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://cloudflytc.github.io">
+        <img class="avatar" src="https://cloudflytc.github.io/images/avatar.png?v=1613926879797" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://cloudflytc.github.io">
+        <h1 class="site-title">随笔</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://www.imgs.work/image/5ee83ba04e549.jpg')">
+            </div>
+          
+          <h2 class="post-title">利用vercel(前now.sh)搭建Onepoint</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-02-21</span>
+            
+          </div>
+          <div class="post-content">
+            <p><a href="https://vercel.com/" title="vercel">vercel</a>是一家免费的 serverless 网站，类似于cf-worker这些，但是它家的母鸡节点是有台湾的，测试ping还是很好看的。<br>
+附一张我搭建的网站测试图：<br>
+<img src="https://www.imgs.work/image/5ee83ba04e549.jpg%22" alt="now.sh" loading="lazy"></p>
+<p>而且它家的免费套餐给的额度很高，也不限制流量和访问数，相当良心的一家公司。</p>
+<h2 id="官网地址httpsvercelcom">官网地址：https://vercel.com/</h2>
+<h3 id="1-注册">1. 注册</h3>
+<p>注册很简单，一般直接 github 登录就好了，但是有一点问题是我github账户绑定***qq邮箱***的时候是注册侧边的的。<br>
+换成gmail就可以了。</p>
+<h3 id="2-安装cli">2. 安装CLI</h3>
+<h4 id="-安装nodejs">- 安装nodejs</h4>
+<p>Nodejs 官方地址：https://nodejs.org/en/download/<br>
+直接官网下exe安装即可，不多介绍了</p>
+<h4 id="-安装nowcli">- 安装nowcli</h4>
+<p>打开 cmd 或者 PowerShell 输入</p>
+<pre><code class="language-go">npm install -g now
+</code></pre>
+<h4 id="-登录">- 登录</h4>
+<p>安装完后再输入</p>
+<pre><code class="language-go">now login
+</code></pre>
+<p>按提示输入邮箱（github绑定的邮箱）<br>
+然后会有一份邮件发到你邮箱，点击确认就行了。</p>
+<h3 id="3安装onepoint">3.安装onepoint</h3>
+<ol>
+<li>
+<p>下载源码：https://github.com/ukuq/onepoint/archive/master.zip</p>
+</li>
+<li>
+<p>解压后进入 test/nowsh 文件夹</p>
+</li>
+<li>
+<p>修改配置文件<br>
+配置文件是 api/config.json ，文件配置挺复杂的，原作者对配置文件的说明：https://www.onesrc.cn/p/details-of-onepoint-configjson-configuration.html</p>
+</li>
+</ol>
+<p>配置文件设置有点复杂，其实是可以通过源码目录下 doc/config.html 直接生成的，里面比较难的是核心设置部分，我就讲一下：<br>
+1. 如图，进入核心设置后将下面的设置全部删除（/ 目录必须存在，你也无法删除）<br>
+<img src="https://www.imgs.work/image/5ee83c1a7fcae.jpg" alt="核心设置" title="核心设置" loading="lazy"><br>
+2. 映射路径就是挂载后显示的路径，单盘直接 / 即可，模块类型 应该都看的懂，看不懂去作者文章里看一看。选完后模块后，根路径就是你OneDrive 内的路径，填完后点击 获取令牌 然后登录就行了。 给个实例：<br>
+<img src="https://www.imgs.work/image/5ee83c73cf02d.jpg" alt="token" title="token" loading="lazy">'</p>
+<pre><code>3. 登录后会得到一大串字符，把最后的 refresh_token 值复制回去点击确认添加就ok了。
+
+4. 所有要挂载的盘设置完后 把生成结果整个复制到 config.json 内即可。
+</code></pre>
+<ol start="4">
+<li>在onepoint/test/nowsh 目录下，命令行运行 now 命令部署<br>
+请注意，now的每一次部署都会变成一个类似分支的结构，如果你想将最新的部署设置成主域名的话请输入：</li>
+</ol>
+<pre><code class="language-go">now --prod
+</code></pre>
+<h3 id="4-搭建完成">4. 搭建完成</h3>
+<p>给个作者搭建的展示站吧：https://onepoint.ukuq.now.sh</p>
+
+          </div>
+        </div>
+
+        
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">just writing</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+   | <a class="rss" href="https://cloudflytc.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cloudflytc.github.io</id>
+    <title>随笔</title>
+    <updated>2021-02-21T17:01:50.579Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cloudflytc.github.io"/>
+    <link rel="self" href="https://cloudflytc.github.io/atom.xml"/>
+    <subtitle>just writing</subtitle>
+    <logo>https://cloudflytc.github.io/images/avatar.png</logo>
+    <icon>https://cloudflytc.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, 随笔</rights>
+    <entry>
+        <title type="html"><![CDATA[连接WARP 服务做Netflix解锁]]></title>
+        <id>https://cloudflytc.github.io/post/warp_netflix/</id>
+        <link href="https://cloudflytc.github.io/post/warp_netflix/">
+        </link>
+        <updated>2021-02-21T16:00:41.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://one.one.one.one">WARP</a>是<a href="https://www.cloudflare.com">cloudflare</a>推出的一款保护隐私的代理软件。因为Netflix会将其作为原生ip看待，所以可以做一个变相的流媒体解锁来用。</p>
+<h1 id="前言">前言</h1>
+<p><strong>因为使用的是wireguard，可能会导致机器失联，请确保第一次使用的机器可以通过后台开关机，以恢复路由表。</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://one.one.one.one">WARP</a>是<a href="https://www.cloudflare.com">cloudflare</a>推出的一款保护隐私的代理软件。因为Netflix会将其作为原生ip看待，所以可以做一个变相的流媒体解锁来用。</p>
+<h1 id="前言">前言</h1>
+<p><strong>因为使用的是wireguard，可能会导致机器失联，请确保第一次使用的机器可以通过后台开关机，以恢复路由表。</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图床速度&防盗链测试]]></title>
+        <id>https://cloudflytc.github.io/post/tcspeed/</id>
+        <link href="https://cloudflytc.github.io/post/tcspeed/">
+        </link>
+        <updated>2021-02-21T15:55:21.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[各大国内网盘测试]]></title>
+        <id>https://cloudflytc.github.io/post/wpspeedtest/</id>
+        <link href="https://cloudflytc.github.io/post/wpspeedtest/">
+        </link>
+        <updated>2021-02-21T15:36:44.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[利用vercel(前now.sh)搭建Onepoint]]></title>
+        <id>https://cloudflytc.github.io/post/nowsh_onepoint/</id>
+        <link href="https://cloudflytc.github.io/post/nowsh_onepoint/">
+        </link>
+        <updated>2021-02-21T15:29:44.000Z</updated>
+    </entry>
+</feed>

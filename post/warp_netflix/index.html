@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>连接WARP 服务做Netflix解锁 | 随笔</title>
+<meta name="description" content="just writing">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cloudflytc.github.io/favicon.ico?v=1613926879797">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cloudflytc.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://cloudflytc.github.io">
+        <img class="avatar" src="https://cloudflytc.github.io/images/avatar.png?v=1613926879797" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://cloudflytc.github.io">
+        <h1 class="site-title">随笔</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://ae01.alicdn.com/kf/U9a7e579b9ddd4672b88aa3fe469832e8Q.jpg')">
+            </div>
+          
+          <h2 class="post-title">连接WARP 服务做Netflix解锁</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-02-22</span>
+            
+          </div>
+          <div class="post-content">
+            <p><a href="https://one.one.one.one">WARP</a>是<a href="https://www.cloudflare.com">cloudflare</a>推出的一款保护隐私的代理软件。因为Netflix会将其作为原生ip看待，所以可以做一个变相的流媒体解锁来用。</p>
+<h1 id="前言">前言</h1>
+<p><strong>因为使用的是wireguard，可能会导致机器失联，请确保第一次使用的机器可以通过后台开关机，以恢复路由表。</strong></p>
+<!-- more -->
+<p>本文思路来源：<a href="https://luotianyi.vc/5252.html">@Luminous</a><br>
+借鉴github：<br>
+<a href="https://github.com/zbinlin/wireguard-configuration">https://github.com/zbinlin/wireguard-configuration</a><br>
+<a href="https://github.com/QiuSimons/Netflix_IP">https://github.com/QiuSimons/Netflix_IP</a><br>
+<a href="https://github.com/ViRb3/wgcf">https://github.com/ViRb3/wgcf</a></p>
+<h1 id="warp-wireguard配置文件获取">WARP wireguard配置文件获取</h1>
+<p>WGCF是一个基于Go语言编写的WARP管理程序，作者一直在维护，使用起来相当方便。</p>
+<p>| 项目地址：<a href="https://github.com/ViRb3/wgcf">https://github.com/ViRb3/wgcf</a></p>
+<p>下载编译好的文件：</p>
+<pre><code>mkdir wgcf
+cd wgcf
+wget -O wgcf https://github.com/ViRb3/wgcf/releases/download/v2.1.4/wgcf_2.1.4_linux_amd64
+chmod +x wgcf
+</code></pre>
+<p>注册并生成配置文件</p>
+<pre><code>#注册WARP账户
+./wgcf register
+#生成WireGuard配置文件
+./wgcf generate
+</code></pre>
+<p>随后你就可以在程序目录中找到 <strong>wgcf-account.toml</strong> 和 <strong>wgcf-profile.conf</strong> 两个新生成的文件。前者是你的WARP账户信息，如果你有WARP+账户可以替换成你自己的账户；后者就是WireGuard的配置文件了，下载到本地保存。</p>
+<h1 id="wireguard-安装">wireguard 安装</h1>
+<p>官方安装教程页面：<a href="https://www.wireguard.com/install/">https://www.wireguard.com/install/</a><br>
+官方基本上把所有操作系统都写了，如果装不上只能自己找解决方法了。</p>
+<h1 id="wireguard-配置文件修改">wireguard 配置文件修改</h1>
+<p>wgcf-profile.conf 的样式是如图所示：<br>
+<a href="https://www.imgs.work/image/60328a577efb6.jpg"><img src="https://www.imgs.work/image/60328a577efb6.jpg" alt="https://www.imgs.work/image/60328a577efb6.jpg" loading="lazy"></a><br>
+各参数含义可以看官方文档，我们想解锁流媒体就只用关注一个参数 AllowedIPs ,用于指定代理的ip，0.0.0.0/0 即表示全局代理<br>
+所以有两种改法：白名单制和黑名单制。</p>
+<h2 id="1只代理netflix一个网站的ip">1.只代理Netflix一个网站的ip</h2>
+<p>这种改法很简单，只要把Netflix的ip全部写到AllowedIPs后即可。<br>
+我已经提取出所有Netflix IP了：<a href="https://cdn.jsdelivr.net/gh/cloudflytc/ip/netflix.txt">Netflix</a>，直接粘贴到后面就可以。<br>
+具体如何获取全部ip请去<a href="https://github.com/QiuSimons/Netflix_IP">https://github.com/QiuSimons/Netflix_IP</a>研究。</p>
+<h2 id="2除了国内地址全部代理">2.除了国内地址全部代理</h2>
+<p>因为抓取一个流媒体的全部ip太过麻烦，可以选择除国内ip的全局代理。<br>
+具体可以去看<a href="https://blog.mozcp.com/wireguard-usage/">https://blog.mozcp.com/wireguard-usage/</a>以及他的GitHub：<a href="https://github.com/zbinlin/wireguard-configuration">https://github.com/zbinlin/wireguard-configuration</a>查看。整体来说不是很难，但是有可能导致失联。</p>
+<p><em><strong><font color='red'>但是注意一点，因为路由表脚本启动需要时间，会先进行全局代理，在wg-quick up 的时候请使用screen，否则必失联。</font></strong></em></p>
+<h1 id="wireguard-启动">wireguard 启动</h1>
+<p>配置文件目录放在/etc/wireguard下。比如我选择命名为wgcf.conf，则开启与关闭命令与配置文件对应：</p>
+<pre><code>#开启隧道
+sudo wg-quick up wgcf
+#关闭隧道
+sudo wg-quick down wgcf
+</code></pre>
+<p>开机自启：<br>
+虽然说没什么必要开机自启，但是懒得每次都得手动启动还是可以设置一下的：</p>
+<pre><code>#允许配置文件为wg0的开机自启
+systemctl enable wg-quick@wg0.service
+#重载deamon配置
+systemctl daemon-reload
+#启动wg0配置文件的进程
+systemctl start wg-quick@wg0
+</code></pre>
+<h1 id="效果测试">效果测试</h1>
+<p>因为warp免费版貌似是有<font color='red'>限速</font>的，不是很建议用第二种全局代理法。</p>
+<p>解锁效果1（机器是aws的香港服务器）：<br>
+<img src="https://www.imgs.work/image/60328f774a680.jpg" alt="" loading="lazy"></p>
+<p>解锁效果2 （机器是aws的新加坡服务器）：<br>
+<img src="https://www.imgs.work/image/60328ffc64366.jpg" alt="" loading="lazy"><br>
+fast.com测速结果:<br>
+<img src="https://www.imgs.work/image/60328f12bb178.jpg" alt="" loading="lazy"></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://cloudflytc.github.io/post/tcspeed/">
+              <h3 class="post-title">
+                下一篇：图床速度&amp;防盗链测试
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">just writing</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+   | <a class="rss" href="https://cloudflytc.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

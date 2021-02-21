@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>图床速度&amp;防盗链测试 | 随笔</title>
+<meta name="description" content="just writing">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cloudflytc.github.io/favicon.ico?v=1613926879797">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cloudflytc.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://cloudflytc.github.io">
+        <img class="avatar" src="https://cloudflytc.github.io/images/avatar.png?v=1613926879797" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://cloudflytc.github.io">
+        <h1 class="site-title">随笔</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://shop.io.mi-img.com/app/shop/img?id=shop_82b195c88c1c269f75f1d08fbb93acf8.jpeg')">
+            </div>
+          
+          <h2 class="post-title">图床速度&amp;防盗链测试</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-02-21</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://cloudflytc.github.io/tag/G4iSXisIT/">
+                    测试
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="图床">图床</h1>
+<h2 id="一-无防盗链">一、无防盗链</h2>
+<h3 id="1小米图床">1.小米图床</h3>
+<figure data-type="image" tabindex="1"><img src="https://shop.io.mi-img.com/app/shop/img?id=shop_82b195c88c1c269f75f1d08fbb93acf8.jpeg" alt="小米图床" title="小米图床" loading="lazy"></figure>
+<h3 id="2smms">2.smms</h3>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/05/02/WrEqiAXfpDojyvx.jpg" alt="smms" loading="lazy"></figure>
+<h3 id="3阿里图床-接口快烂大街了翻车max">3.阿里图床 (接口快烂大街了，翻车max)</h3>
+<figure data-type="image" tabindex="3"><img src="https://ae01.alicdn.com/kf/H1a26400422ce42d5beeeac16c9d1a0cdT.jpg" alt="阿里云1" title="阿里云" loading="lazy"></figure>
+<p>阿里云变动后测试(2020/8/1)<br>
+<img src="https://ae01.alicdn.com/kf/U4f53d7a50f0f4bc9bbae8085da43e1526.jpg" alt="aly2" title="aly2" loading="lazy"></p>
+<h3 id="4网易图床">4.网易图床</h3>
+<figure data-type="image" tabindex="4"><img src="https://yanxuan.nosdn.127.net/3d7600060c8521c1dab66e4e025c6aa4.jpg" alt="网易" title="网易" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://edu-image.nosdn.127.net/b0e0456290d94ec8974a531af6cc636e.jpg" alt="网易2" title="网易2" loading="lazy"></figure>
+<h3 id="5苏宁图床">5.苏宁图床</h3>
+<figure data-type="image" tabindex="6"><img src="https://image.suning.cn/uimg/ZR/share_order/158842568667047665.jpg" alt="苏宁" title="苏宁" loading="lazy"></figure>
+<h3 id="6头条">6.头条</h3>
+<figure data-type="image" tabindex="7"><img src="https://p.pstatp.com/origin/fee10000e6d3af883f78" alt="头条" title="头条" loading="lazy"></figure>
+<h3 id="7bilibili图床不能ssl">7.bilibili图床(不能ssl)</h3>
+<p><img src="http://i0.hdslb.com/bfs/article/d069ab8a0acacbbf71e80b14c6b2757638350ff8.jpg" alt="bilibili" title="bilibili" loading="lazy"><br>
+<img src="https://i0.hdslb.com/bfs/article/d069ab8a0acacbbf71e80b14c6b2757638350ff8.jpg" alt="bili https访问" title="bilibili" loading="lazy"></p>
+<p>###8. 腾讯系</p>
+<h4 id="81qq空间">8.1.qq空间</h4>
+<figure data-type="image" tabindex="8"><img src="https://r.photo.store.qq.com/psc?/V14DGxwK4RK9o6/mDs9eOaMYcPW22baQKoti8pJXYSMQ1YO5hbuZuuLFhjOkjPT.XgXufattmc8e00l6e7irNbU1Y*k0m8gRvbKFKOxuaMe8iU32IfPJ1M9cFw!/r" alt="qqkj" title="qqkj" loading="lazy"></figure>
+<h4 id="82腾讯文档有防盗链">8.2.腾讯文档（有防盗链</h4>
+<figure data-type="image" tabindex="9"><img src="https://qqadapt.qpic.cn/txdocpic/0/0ebfc2c5a5fae38d8e7cebc6b8e89463/0" alt="腾讯文档" title="腾讯文档" loading="lazy"></figure>
+<h4 id="83coding">8.3.coding</h4>
+<figure data-type="image" tabindex="10"><img src="https://tccs.coding.net/api/share/download/d27b85ab-8df0-4278-95cc-b0339276e948" alt="coding" title="coding" loading="lazy"></figure>
+<h4 id="84腾讯论坛">8.4.腾讯论坛</h4>
+<figure data-type="image" tabindex="11"><img src="https://www.imgs.work/image/5f0fb19ab36f0.jpg" alt="lt" title="lt" loading="lazy"></figure>
+<h3 id="9百度">9.百度</h3>
+<figure data-type="image" tabindex="12"><img src="https://pic.rmb.bdstatic.com/16d0ea98535187211189380e9e357016.jpeg" alt="百度" title="百度" loading="lazy"></figure>
+<h3 id="10葫芦侠">10.葫芦侠</h3>
+<figure data-type="image" tabindex="13"><img src="https://cdn.u1.huluxia.com/g4/M02/07/DA/rBAAdl6tfRSAeRQNAAz7cc5yk-8927.jpg" alt="葫芦侠" title="葫芦侠" loading="lazy"></figure>
+<h3 id="11-jsdelivrcdngithub">11. jsdelivrcdn+github</h3>
+<figure data-type="image" tabindex="14"><img src="https://cdn.jsdelivr.net/gh/ImIvey/images/2020/05/02/5ead7d5feb0b6.jpg" alt="cdn+github" title="cdn+github" loading="lazy"></figure>
+<h3 id="12bcebos">12.bcebos</h3>
+<figure data-type="image" tabindex="15"><img src="https://developer-forum-online.cdn.bcebos.com/f030b29e-c3f1-4a7e-bb35-c22aab00df4b.jpg" alt="bcebos" title="bcebos" loading="lazy"></figure>
+<h3 id="13imgbb-会被剪裁压缩成头像大小">13.imgbb （会被剪裁压缩成头像大小</h3>
+<figure data-type="image" tabindex="16"><img src="https://i.ibb.co/0frBdSZ/5ead7dc0578be.jpg" alt="imgbb" title="imgbb" loading="lazy"></figure>
+<h3 id="14搞定-20200709">14.搞定 （2020/07/09）</h3>
+<figure data-type="image" tabindex="17"><img src="https://st-gdx.dancf.com/gaodingx/159416059/design/20200709-160358-bccf.jpg" alt="gd" title="gd" loading="lazy"></figure>
+<h3 id="15中关村2020625">15.中关村（2020/6/25）</h3>
+<figure data-type="image" tabindex="18"><img src="https://common-fd.zol-img.com.cn/g4/M08/01/03/ChMly170pESIIxRHAAZg7mKS94IAAYTOwLbmKcABmEG502.jpg" alt="中关村" title="中关村" loading="lazy"></figure>
+<h3 id="16虎牙-2020625">16.虎牙 （2020/6/25）</h3>
+<figure data-type="image" tabindex="19"><img src="https://huya-kefu.oss-cn-hangzhou.aliyuncs.com/robot-20200625-26671593091566406.jpg" alt="虎牙" title="虎牙" loading="lazy"></figure>
+<h3 id="17云班课-2020625">17.云班课 （2020/6/25）</h3>
+<figure data-type="image" tabindex="20"><img src="https://public-cdn-oss.mosoteach.cn/mssvc/editor/64667bdd11b284255f0d260143a682eb/2020/06/5ae16808762cc277d8384c109bab3a49.jpg" alt="云班课" title="云班课" loading="lazy"></figure>
+<h3 id="18合从-2020709">18.合从 （2020/7/09）</h3>
+<figure data-type="image" tabindex="21"><img src="https://chatimg.aihecong.com/Fsj-oR_in8VEju2zan1-W2a64FBJ.jpg" alt="hecong" title="hecong" loading="lazy"></figure>
+<h3 id="19千图-20200712">19.千图  （2020/07/12）</h3>
+<figure data-type="image" tabindex="22"><img src="https://fs-im-kefu.7moor-fs2.com/im/1cf621c0-5c37-11e9-9460-658dbd81beae/cf/2020/07/12/92_5f0aca0e06b2d.jpg" alt="千图" title="千图" loading="lazy"></figure>
+<h3 id="20携程-20200722">20.携程  (2020/07/22)</h3>
+<figure data-type="image" tabindex="23"><img src="https://dimg04.c-ctrip.com/images/0Z073120005vx4orrF626.jpg" alt="xiecheng" title="xiecheng" loading="lazy"></figure>
+<h3 id="21美图-2020725">21.美图 （2020/7/25）</h3>
+<figure data-type="image" tabindex="24"><img src="https://obs.mtlab.meitu.com/mtopen/Qap9hcDyzTYW8MU0P24GoBWhr81ugK_h/MTU5NTY3ODQwMA==/2b5aef90-4455-4034-7ada-073eab3f6d80.jpeg" alt="meitu" title="meitu" loading="lazy"></figure>
+<h3 id="22youku-20200725">22.youku  (2020/07/25)</h3>
+<figure data-type="image" tabindex="25"><img src="https://alime-customer-upload-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/customer-upload/1595685113995_Kw8uaiRGxlAH.jpg" alt="youku" title="youku" loading="lazy"></figure>
+<h3 id="23aqy-20200803">23.aqy (2020/08/03)</h3>
+<figure data-type="image" tabindex="26"><img src="https://static-help.iqiyi.com/qichuan3/bj.oss.qiyi.storage/80/aws-ugc-qichuan/material/ugc_openapi_iqiyi_online_service_file/20200803/e0/42/71de8c3258cd4cecb872b5a68b5a1a8b.jpg" alt="aqy" title="aqy" loading="lazy"></figure>
+<h3 id="24bkimg20200810">24.bkimg(2020/08/10)</h3>
+<figure data-type="image" tabindex="27"><img src="https://bkimg.cdn.bcebos.com/pic/810a19d8bc3eb13533fa4b3b6a57bfd3fd1f4134ee53" alt="bkimg" title="bkimg" loading="lazy"></figure>
+<h3 id="25gtime0810">25.gtime(08/10)</h3>
+<figure data-type="image" tabindex="28"><img src="http://inews.gtimg.com/newsapp_ls/0/12252221689/0" alt="gtime" title="gtime" loading="lazy"></figure>
+<h3 id="26vxichina">26.vxichina</h3>
+<figure data-type="image" tabindex="29"><img src="https://qqchat.vxichina.cn/file/chatUpdateFiles/bfac7dbf02a4471bba8ccec09bfa493920200810164056.jpg" alt="vxichina" title="vxichina" loading="lazy"></figure>
+<h3 id="27muke">27.muke</h3>
+<figure data-type="image" tabindex="30"><img src="https://img.mukewang.com/user/5f3108b60001b1b229421912.jpg" alt="muke" title="muke" loading="lazy"></figure>
+<h2 id="二-国内比较慢的">二、国内比较慢的</h2>
+<h3 id="1牛图-巨慢">1.牛图 （巨慢</h3>
+<figure data-type="image" tabindex="31"><img src="https://i.niupic.com/images/2020/05/02/7zBx.jpg" alt="牛图" title="牛图" loading="lazy"></figure>
+<h3 id="2catbox-巨慢">2.catbox (巨慢)</h3>
+<figure data-type="image" tabindex="32"><img src="https://files.catbox.moe/uueuqm.jpg" alt="catbox" title="catbox" loading="lazy"></figure>
+<h2 id="无防盗链但是会失效">无防盗链但是会失效</h2>
+<h3 id="1奇虎">1.奇虎</h3>
+<figure data-type="image" tabindex="33"><img src="https://ps.ssl.qhmsg.com/t025a7608628757cc03.jpg" alt="奇虎" title="奇虎" loading="lazy"></figure>
+<p>##三、 测试有防盗链的</p>
+<h2 id="不会删除图片可以反代救一下">不会删除图片，可以反代救一下</h2>
+<h3 id="1掘金图床-有防盗链">1.掘金图床 （有防盗链</h3>
+<figure data-type="image" tabindex="34"><img src="https://user-gold-cdn.xitu.io/2020/5/2/171d583b4ec13641" alt="掘金图床" title="掘金图床" loading="lazy"></figure>
+<h3 id="2微博图床-有防盗链">2.微博图床 （有防盗链</h3>
+<figure data-type="image" tabindex="35"><img src="https://ww1.sinaimg.cn/large/006US70gly1geefqzfvbcj31y017rh6c.jpg" alt="微博" title="微博" loading="lazy"></figure>
+<h2 id="四-不仅防盗还会删图片-废物">四、不仅防盗，还会删图片 （废物</h2>
+<h3 id="1搜狗图床-有防盗链">1.搜狗图床 （有防盗链</h3>
+<figure data-type="image" tabindex="36"><img src="https://img01.sogoucdn.com/app/a/100520146/3a1c6565fd71ab8a657300a3654c0e69" alt="搜狗" title="搜狗" loading="lazy"></figure>
+<h3 id="2搜狐图床-有防盗链">2.搜狐图床 （有防盗链</h3>
+<figure data-type="image" tabindex="37"><img src="https://cy-pic.kuaizhan.com/g3/66/c4/cfb8-b871-4217-9e20-c88cf13b66f372?cysign=312f03e5b467fe904f9f79ae14f50563&amp;cyt=1588425823" alt="搜狗" title="搜狐" loading="lazy"></figure>
+<h2 id="五-新图床测试">五、 新图床测试</h2>
+<h3 id="1斗鱼-2020804">1.斗鱼 （2020/8/04）</h3>
+<figure data-type="image" tabindex="38"><img src="https://sta-op.douyucdn.cn/kfs/2020/08/04/e275cf168b4d1b91279521e45f2deab8.jpg" alt="斗鱼" title="斗鱼" loading="lazy"></figure>
+<h3 id="2知乎-2020704">2.知乎 （2020/7/04）</h3>
+<figure data-type="image" tabindex="39"><img src="https://pic1.zhimg.com/v2-7ce856848eae41b42a6188bebe954021_r.jpg" alt="知乎" title="知乎" loading="lazy"></figure>
+<h3 id="3apple-2020803">3.apple （2020/8/03）</h3>
+<figure data-type="image" tabindex="40"><img src="https://discussionschinese.apple.com/content/attachment/9c541938-fa10-471b-973b-50cbca756d71" alt="apple" title="apple" loading="lazy"></figure>
+<h3 id="4pan-20200804">4.pan  (2020/08/04)</h3>
+<figure data-type="image" tabindex="41"><img src="https://help-ol.bj.bcebos.com/aff1094344c06c1de412e6a8e24b3b6b.jpg" alt="pan" title="pan" loading="lazy"></figure>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://cloudflytc.github.io/post/wpspeedtest/">
+              <h3 class="post-title">
+                下一篇：各大国内网盘测试
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">just writing</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+   | <a class="rss" href="https://cloudflytc.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
